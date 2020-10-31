@@ -4,6 +4,18 @@
   box-sizing: border-box;
 }
 
+:root {
+
+  --white: #ffffff;
+  --high-yellow: #f9fb00;
+  --teal: #02feff;
+  --green: #01ff00;
+  --pink: #fd00fb;
+  --red: #fb0102;
+  --blue:#0301fc;
+  --black: #000000;
+}
+
 html,
 body,
 .wrapper {
@@ -14,7 +26,11 @@ body,
 
 body {
   font-family: sans-serif;
-  background-color: #f9fbfd;
+  background-color: var(--black);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .wrapper {
@@ -27,15 +43,45 @@ header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+  color: var(--pink);
+}
+
+.form {
+  display:grid;
+  grid-template-columns: auto auto;
+}
+
+label {
+  padding-top: 5px;
+}
+
+label:nth-child(1) {
+  padding-top:10px;
+}
+
+input {
+  padding-top: 5px;
+}
+
+/* input:nth-child(1) {
+  padding-top:10px;
+} */
+
+.character-amount-container {
+  display: flex;
+  align-items: center;
+}
+
+.number-input {
+  width: 3rem;
 }
 
 .card {
-  background-color: hsl(0, 0%, 100%);
+  background-color: var(--pink);
   border-radius: 5px;
   border-width: 1px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-  color: hsl(206, 17%, 28%);
+  box-shadow: var(--green) 2px 0px 0px 0px;
+  color: var(--green);
   font-size: 18px;
   margin: 0 auto;
   max-width: 800px;
@@ -46,7 +92,7 @@ header {
   content: " ";
   display: block;
   width: 100%;
-  background: #e7e9eb;
+  background: var(--green);
   height: 2px;
 }
 
@@ -56,13 +102,17 @@ header {
 
 .card-footer {
   text-align: center;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .card-footer::before {
   content: " ";
   display: block;
   width: 100%;
-  background: #e7e9eb;
+  background: var(--green);
   height: 2px;
 }
 
@@ -74,11 +124,11 @@ header {
 
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
+  background-color: var(--green);
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
-  color: hsl(0, 0%, 100%);
+  color: var(--black);
   display: inline-block;
   font-size: 22px;
   line-height: 22px;
@@ -86,6 +136,11 @@ header {
   padding: 14px 34px;
   text-align: center;
   cursor: pointer;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  transition: transform .2s;
 }
 
 button[disabled] {
@@ -112,10 +167,12 @@ button[disabled] {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
-  border: 2px dashed #c0c7cf;
+  border: 2px dashed var(--green);
   border-radius: 6px;
   resize: none;
   overflow: hidden;
+  color: var(--black);
+  background:var(--teal);
 }
 
 @media (max-width: 690px) {

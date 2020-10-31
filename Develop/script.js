@@ -1,5 +1,11 @@
 // Assignment code here
+//Sync number and selector for number of characters
+const characterAmountRange = document.getElementById
+('characterAmountRange')
+const characterAmountNumber = document.getElementById
+('characterAmountNumber')
 
+characterAmountNumber.addEventListener('input','syncCharacterAmount')
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
